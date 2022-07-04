@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
     fs.readFile("visitors.txt", "utf8", (err, data) => {
@@ -11,6 +12,6 @@ app.get("/", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Listen on the port 3000...");
+app.listen(port, () => {
+    console.log(`Listen on the port ${port}...`);
 });
