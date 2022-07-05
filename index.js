@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
         res.send(after);
     });
 });
-app.post("/query", (req, res) => {
+app.get("/query", (req, res) => {
     fs.readFile("visitors.txt", "utf8", (err, data) => {
         res.send(data);
     });
