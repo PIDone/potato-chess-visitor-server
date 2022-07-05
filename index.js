@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
     fs.readFile("visitors.txt", "utf8", (err, data) => {
         let after = (parseInt(data) + 1).toString();
         fs.writeFile("visitors.txt", after, err => { });
-        res.send(after + "<img src='./image.png' alt='dummy image'>");
+        res.send(after);
     });
 });
 app.post("/query", (req, res) => {
